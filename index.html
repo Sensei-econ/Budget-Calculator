@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>My Firm's Budget</h1>
+  <div class="header-row">
+    <label>Business Name: <input type="text" id="businessName" placeholder="Your Business"></label>
+    <label>Year: <input type="number" id="year" value="2026"></label>
+  </div>
+
+  <section id="revenue-section">
+  <h2>Annual Revenue</h2>
+
+  <div class="product-setup">
+    <label>Base Quantity: <input type="number" id="baseQuantity" value="100"></label>
+    <label>Unit: <input type="text" id="baseUnit" value="unit"></label>
+    <label>Projected % Change: <input type="number" id="pctChange" value="0" step="0.01"></label>
+  </div>
+
+  <table id="revenue-table">
+  <tr><th></th><th>Quantity</th><th>Unit</th><th>Price/unit</th><th>Revenue</th><th id="perUnitHeader">$/unit</th></tr>
+<tr>
+  <td><input type="text" id="productSalesName" value="Product Sales"></td>
+  <td id="productQtyDisplay">0</td>
+  <td id="productUnitDisplay">unit</td>
+  <td><input type="number" id="productPrice" value="0" step="0.01"></td>
+  <td>$<span id="productRevenueDisplay">0</span></td>
+  <td>$<span id="productPerUnitDisplay">0</span></td>
+</tr>
+<tr>
+  <td><input type="text" id="otherSalesName" value="Other Sales"></td>
+  <td>1</td>
+  <td>year</td>
+  <td><input type="number" id="otherPrice" value="0" step="0.01"></td>
+  <td>$<span id="otherRevenueDisplay">0</span></td>
+  <td>$<span id="otherPerUnitDisplay">0</span></td>
+</tr>
+  </table>
+  <p>Total Yield: <span id="totalYieldDisplay">0</span> <span id="totalYieldUnitDisplay">unit</span></p>
+  <p><strong>Total Revenue: $<span id="totalRevenue">0</span></strong></p>
+  </section>
+
+  <section id="variable-costs-section">
+  <h2>Annual Variable Costs</h2>
+  <div id="variable-costs-container"></div>
+  <p><strong>Total Variable Costs: $<span id="totalVariableCosts">0</span></strong></p>
+  </section>
+
+  <section id="fixed-costs-section">
+  <h2>Annual Fixed Costs</h2>
+
+<details>
+  <summary><h3>Depreciation</h3></summary>
+  <div id="depreciation-container"></div>
+</details>
+
+    <h3>Land</h3>
+    <table>
+      <tr><th>Quantity</th><th>Value</th><th>Interest Rate</th><th>Annual Cost</th></tr>
+      <tr>
+      <td><input type="number" id="landQty" value="1"></td>
+      <td><input type="number" id="landValue" value="0" step="0.01"></td>
+      <td><input type="number" id="landInterestRate" value="5" step="0.1"> %</td>
+      <td>$<span id="landCostDisplay">0</span></td>
+    </tr>
+    </table>
+
+    <div id="other-fixed-costs-container"></div>
+
+    <p><strong>Total Fixed Costs: $<span id="totalFixedCosts">0</span></strong></p>
+  </section>
+
+  <section id="performance-section">
+  <h2>Performance Measures</h2>
+
+  <h3>Totals</h3>
+  <p>Total Annual Cost: $<span id="totalAnnualCostDisplay">0</span></p>
+  <p>Net Firm Income (NFI): $<span id="nfiDisplay">0</span></p>
+  <p>Return over Variable Cost (ROVC): $<span id="rovcDisplay">0</span></p>
+
+  <h3>Breakeven Revenue</h3>
+  <p>Long-run (covers all costs): $<span id="breakevenLongRunDisplay">0</span></p>
+  <p>Short-run (covers variable costs): $<span id="breakevenShortRunDisplay">0</span></p>
+
+  <h3>Labor Hours</h3>
+<table>
+  <tr><th></th><th>Value</th></tr>
+  <tr><td>Assumed Hours Worked / Month</td><td><input type="number" id="hoursPerMonth" value="166.67" step="0.01"></td></tr>
+  <tr><td>Assumed Months Worked / Year</td><td><input type="number" id="monthsPerYear" value="12"></td></tr>
+</table>
+
+<table>
+  <tr><th></th><th>Hours/year</th></tr>
+  <tr><td>Owner</td><td><input type="number" id="ownerHours" value="2000"></td></tr>
+  <tr><td>Paid (from Labor Hours)</td><td><span id="paidHoursDisplay">0</span></td></tr>
+  <tr><td>Family</td><td><input type="number" id="familyHours" value="0"></td></tr>
+  <tr><td>Other</td><td><input type="number" id="otherHours" value="0"></td></tr>
+</table>
+<p>Total Worker Equivalents: <span id="workersDisplay">0</span></p>
+
+  <h3>Return to Owner Labor ($/hour)</h3>
+  <p>Long-run: $<span id="returnOwnerLongRunDisplay">0</span></p>
+  <p>Short-run: $<span id="returnOwnerShortRunDisplay">0</span></p>
+
+  <h3>Return to ALL Labor ($/hour)</h3>
+  <p>Long-run: $<span id="returnAllLongRunDisplay">0</span></p>
+  <p>Short-run: $<span id="returnAllShortRunDisplay">0</span></p>
+</section>
+
+<div class="no-print">
+  <button id="createPdfBtn">Create PDF</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

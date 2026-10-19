@@ -1,0 +1,47 @@
+/* Center all number inputs */
+input[type="number"] {
+  text-align: center;
+}
+
+/* Center cells that contain number inputs */
+td:has(> input[type="number"]) {
+  text-align: center;
+}
+
+/* Keep text inputs left aligned */
+input[type="text"] {
+  text-align: left;
+}
+
+/* Center all columns after the first (name/label column) */
+table td:not(:first-child),
+table th:not(:first-child) {
+  text-align: center;
+}
+
+summary {
+  cursor: pointer;
+}
+summary h3 {
+  display: inline;
+}
+
+details details {
+  margin-left: 20px;
+}
+
+@media print {
+  /* Hide the button itself */
+  .no-print { display: none; }
+
+  /* Make inputs look like plain text, with no boxes or spinner arrows */
+  input {
+    border: none;
+    background: transparent;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+  }
+
+  /* Don't split a table across two pages if it can be avoided */
+  table { break-inside: avoid; }
+}
