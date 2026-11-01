@@ -45,3 +45,12 @@ details details {
   /* Don't split a table across two pages if it can be avoided */
   table { break-inside: avoid; }
 }
+
+.site-footer {
+  margin-top: 40px;
+  padding: 16px 0;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 0.85em;
+  color: #666;
+}
